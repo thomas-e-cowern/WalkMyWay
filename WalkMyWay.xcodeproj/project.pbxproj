@@ -12,6 +12,7 @@
 		4DFB72E52AEEA29B0057CF33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DFB72E42AEEA29B0057CF33 /* Assets.xcassets */; };
 		4DFB72E82AEEA29B0057CF33 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DFB72E72AEEA29B0057CF33 /* Preview Assets.xcassets */; };
 		4DFB72F02AEEA3A10057CF33 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB72EF2AEEA3A10057CF33 /* HealthStore.swift */; };
+		4DFB72F42AEEBAA20057CF33 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB72F32AEEBAA20057CF33 /* Step.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4DFB72E72AEEA29B0057CF33 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4DFB72EF2AEEA3A10057CF33 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		4DFB72F12AEEA5FE0057CF33 /* WalkMyWay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WalkMyWay.entitlements; sourceTree = "<group>"; };
+		4DFB72F32AEEBAA20057CF33 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		4DFB72DF2AEEA2980057CF33 /* WalkMyWay */ = {
 			isa = PBXGroup;
 			children = (
+				4DFB72F22AEEBA920057CF33 /* Models */,
 				4DFB72F12AEEA5FE0057CF33 /* WalkMyWay.entitlements */,
 				4DFB72EE2AEEA38C0057CF33 /* Store */,
 				4DFB72E02AEEA2980057CF33 /* WalkMyWayApp.swift */,
@@ -78,6 +81,14 @@
 				4DFB72EF2AEEA3A10057CF33 /* HealthStore.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		4DFB72F22AEEBA920057CF33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4DFB72F32AEEBAA20057CF33 /* Step.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DFB72E32AEEA2980057CF33 /* ContentView.swift in Sources */,
+				4DFB72F42AEEBAA20057CF33 /* Step.swift in Sources */,
 				4DFB72F02AEEA3A10057CF33 /* HealthStore.swift in Sources */,
 				4DFB72E12AEEA2980057CF33 /* WalkMyWayApp.swift in Sources */,
 			);
