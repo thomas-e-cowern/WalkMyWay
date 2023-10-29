@@ -37,8 +37,30 @@ class HealthStore {
         } catch {
             lastError = error
         }
+    }
+    
+    func calculateSteps() async throws {
         
+        guard let healthStore = self.healthStore else { return }
         
+        let calendar = Calendar(identifier: .gregorian)
+        let startDate = calendar.date(byAdding: .day, value: -7, to: Date())
+        let endDate = Date()
+        
+        let stepType = HKQuantityType(.stepCount)
+        let everyDay = DateComponents(day: 1)
+        let thisWeek = HKQuery.predicateForSamples(withStart: startDate, end: endDate)
+        let stepsThisWeek = HKSamplePredicate.quantitySample(type: stepType, predicate: thisWeek)
+        
+        let sumOfStepsQuery = HKStatisticsCollectionQueryDescriptor(predicate: stepsThisWeek, options: .cumulativeSum, anchorDate: endDate, intervalComponents: everyDay)
+        
+        let stepsCount = try await sumOfStepsQuery.result(for: healthStore)
+        
+        guard let startDate = startDate else { return }
+        
+        stepsCount.enumerateStatistics(from: startDate, to: endDate) { statistics, step in
+            let count = statistics.sumQuantity()?.doubleValue(for: .count())
+        }
     }
     
 }
