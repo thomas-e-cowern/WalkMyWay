@@ -54,7 +54,14 @@ struct ContentView: View {
                 }
                 .pickerStyle(.segmented)
                 
-                StepListView(steps: Array(steps.dropFirst()))
+                switch displayType {
+                case .list:
+                    StepListView(steps: Array(steps.dropFirst()))
+                case .chart:
+                    StepChartView(steps: steps)
+                }
+                
+                
             }
             .task {
                 await healthStore.requestAuthorization()
