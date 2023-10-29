@@ -12,14 +12,17 @@ struct ContentView: View {
     @State private var healthStore = HealthStore()
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello")
+        List(healthStore.steps) { step in
+            
+            Text("\(step.count)")
         }
         .task {
             await healthStore.requestAuthorization()
+            do {
+                try await healthStore.calculateSteps()
+            } catch {
+                print(error.localizedDescription)
+            }
         }
         .padding()
     }

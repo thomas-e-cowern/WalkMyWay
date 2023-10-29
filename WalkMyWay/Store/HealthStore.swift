@@ -16,6 +16,7 @@ enum HealthError: Error {
 @Observable
 class HealthStore {
 
+    var steps: [Step] = []
     var healthStore: HKHealthStore?
     var lastError: Error?
     
@@ -60,6 +61,10 @@ class HealthStore {
         
         stepsCount.enumerateStatistics(from: startDate, to: endDate) { statistics, step in
             let count = statistics.sumQuantity()?.doubleValue(for: .count())
+            let step = Step(count: Int(count ?? 0), date: statistics.startDate)
+            if step.count > 0 {
+                self.steps.append(step)
+            }
         }
     }
     
