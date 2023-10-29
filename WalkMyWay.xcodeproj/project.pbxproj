@@ -15,6 +15,7 @@
 		4DFB72F42AEEBAA20057CF33 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB72F32AEEBAA20057CF33 /* Step.swift */; };
 		4DFB72F72AEEBCCF0057CF33 /* StepListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB72F62AEEBCCF0057CF33 /* StepListView.swift */; };
 		4DFB72FA2AEEBE180057CF33 /* StepCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB72F92AEEBE180057CF33 /* StepCalc.swift */; };
+		4DFB72FC2AEEBFB60057CF33 /* TodayStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB72FB2AEEBFB60057CF33 /* TodayStepView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4DFB72F32AEEBAA20057CF33 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		4DFB72F62AEEBCCF0057CF33 /* StepListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepListView.swift; sourceTree = "<group>"; };
 		4DFB72F92AEEBE180057CF33 /* StepCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCalc.swift; sourceTree = "<group>"; };
+		4DFB72FB2AEEBFB60057CF33 /* TodayStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayStepView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				4DFB72F62AEEBCCF0057CF33 /* StepListView.swift */,
+				4DFB72FB2AEEBFB60057CF33 /* TodayStepView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				4DFB72F42AEEBAA20057CF33 /* Step.swift in Sources */,
 				4DFB72F02AEEA3A10057CF33 /* HealthStore.swift in Sources */,
 				4DFB72E12AEEA2980057CF33 /* WalkMyWayApp.swift in Sources */,
+				4DFB72FC2AEEBFB60057CF33 /* TodayStepView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
