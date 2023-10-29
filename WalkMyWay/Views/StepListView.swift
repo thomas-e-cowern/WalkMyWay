@@ -16,10 +16,10 @@ struct StepListView: View {
             HStack {
                 Circle()
                     .frame(width: 10, height: 10)
-                    .foregroundStyle()
+                    .foregroundStyle(isUnder5000(step.count) ? .red : .green)
                 Text("\(step.count)")
                 Spacer()
-                Text(step.date?.formatted(date: .abbreviated, time: .omitted))
+                Text(step.date.formatted(date: .abbreviated, time: .omitted))
             }
         }
         .listStyle(.plain)

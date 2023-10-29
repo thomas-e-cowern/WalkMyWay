@@ -11,11 +11,14 @@ struct ContentView: View {
     
     @State private var healthStore = HealthStore()
     
-    var body: some View {
-        List(healthStore.steps) { step in
-            
-            Text("\(step.count)")
+    private var steps: [Step] {
+        healthStore.steps.sorted { lhs, rhs in
+            lhs.date > rhs.date
         }
+    }
+    
+    var body: some View {
+        StepListView(steps: steps)
         .task {
             await healthStore.requestAuthorization()
             do {
