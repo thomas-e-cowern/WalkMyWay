@@ -7,6 +7,27 @@
 
 import SwiftUI
 
+enum DisplayType: Int, Identifiable, CaseIterable {
+    case list
+    case chart
+    
+    var id: Int {
+        rawValue
+    }
+}
+
+extension DisplayType {
+    var icon: String {
+        switch self {
+        case .list:
+            return "list.bullet"
+        case .chart:
+            return "chart.bar"
+        }
+    }
+}
+
+
 struct ContentView: View {
     
     @State private var healthStore = HealthStore()
