@@ -18,16 +18,24 @@ struct ContentView: View {
     }
     
     var body: some View {
-        StepListView(steps: steps)
-        .task {
-            await healthStore.requestAuthorization()
-            do {
-                try await healthStore.calculateSteps()
-            } catch {
-                print(error.localizedDescription)
+        NavigationStack {
+            VStack {
+                if let step = steps.first {
+                    TodayStepView(step: step)
+                }
+                StepListView(steps: Array(steps.dropFirst()))
             }
+            .task {
+                await healthStore.requestAuthorization()
+                do {
+                    try await healthStore.calculateSteps()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+            .padding()
+        .navigationTitle("Walk My Way")
         }
-        .padding()
     }
 }
 
