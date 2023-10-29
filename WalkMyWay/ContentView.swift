@@ -31,6 +31,7 @@ extension DisplayType {
 struct ContentView: View {
     
     @State private var healthStore = HealthStore()
+    @State private var displayType: DisplayType = .list
     
     private var steps: [Step] {
         healthStore.steps.sorted { lhs, rhs in
@@ -44,6 +45,15 @@ struct ContentView: View {
                 if let step = steps.first {
                     TodayStepView(step: step)
                 }
+                
+                Picker("Selection", selection: $displayType) {
+                    ForEach(DisplayType.allCases) { displayType in
+                        Image(systemName: displayType.icon)
+                            .tag(displayType)
+                    }
+                }
+                .pickerStyle(.segmented)
+                
                 StepListView(steps: Array(steps.dropFirst()))
             }
             .task {
